@@ -1,0 +1,38 @@
+.search_container {
+  display: flex;
+  gap: 1rem; /* 2rem слишком много, можно уменьшить */
+  width: 70%;
+  align-items: center;
+}
+
+.search_container > input {
+  background-color: #ffffff;
+  padding: 1rem 2.1rem;
+  color: #3b82f6;
+  border-radius: 4px;
+  flex: 1; /* Растягивается на всё доступное */
+  min-width: 0; /* важно для предотвращения переполнения */
+  border: none;
+  font-size: 1.01rem;
+  font-weight: 600;
+}
+
+.search_container > input::placeholder {
+  color: #3b82f6;
+  font-size: 1.01rem;
+  font-weight: 600;
+}
+
+.search_container > input:focus {
+  outline: none;
+}
+
+.search_container > div {
+  background-color: #ffffff;
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0; /* чтобы не сжимался */
+}

@@ -1,0 +1,226 @@
+.logo,
+.btns,
+nav * {
+  background: none;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #242424;
+  color: white;
+  z-index: 100;
+  /* border-right: 2px solid transparent; */
+  border-image: linear-gradient(to bottom, #111, #999, #111) 1;
+}
+
+.logo {
+  display: block;
+  z-index: 100;
+  padding: 4.5rem 2rem 3rem 2rem;
+  position: relative;
+}
+
+.logo a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffff;
+  text-decoration: none;
+  display: block;
+  z-index: 100;
+  position: relative;
+}
+
+.btns ul {
+  list-style: none;
+  padding: 0;
+}
+
+.btns ul li {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.btns ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 1.2rem 0 1.2rem 2rem;
+  border-radius: 2px;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.btns ul li a:hover {
+  background: #3b83f63c;
+}
+
+.btns ul li img {
+  padding-right: 15px;
+}
+
+.active {
+  background: #3b82f6; /* Dark background for active state */
+}
+
+.btns ul li.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px; /* Толщина линии */
+  height: 100%;
+  background: #4caf50; /* Цвет линии (зелёный) */
+  border-radius: 2px;
+}
+
+.chat_wrapper {
+  width: 280px;
+}
+
+.chat_button {
+  background: #2fab60;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+}
+
+.chat_container {
+  color: white;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.4s ease-in-out;
+  padding: 0 15px;
+  border-right: 4px solid transparent;
+}
+
+.chat_container.open {
+  border-left: 4px dashed #2fab60; /* Появляется при открытии */
+  padding: 1px;
+  margin-left: 2rem;
+}
+
+.a_chats {
+  padding: 2rem 0 0.5rem 2rem;
+}
+
+.li_wrap {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  overflow-y: auto; /* Добавляем вертикальную прокрутку */
+}
+
+/* Стили для более плавного скролла */
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 3px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}
+
+@media (max-width: 1000px) {
+  .logo {
+    padding: 3rem 1.5rem 2rem 1.5rem;
+    font-size: 1rem;
+  }
+  .logo a {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .chat_wrapper {
+    width: 270px;
+  }
+
+  .btns ul li a {
+    font-size: 0.8rem !important;
+    padding: 1rem 1.5rem 1rem 2rem;
+  }
+
+  .btns ul li img {
+    width: 30px;
+    padding-right: 10px;
+  }
+
+  .a_chats {
+    padding: 1rem 0 0.5rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 740px) {
+  .container {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0 !important;
+    top: auto !important; /* Убедись, что top не мешает */
+    overflow-y: visible;
+  }
+
+  .btns {
+    display: flex;
+    width: 100%;
+  }
+
+  .btns span {
+    display: none;
+  }
+
+  .btns ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .btns ul li {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+  }
+
+  .btns ul li img {
+    /* width: 20px; */
+    padding-right: 0;
+  }
+
+  .btns ul li a {
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .active {
+    background: #3b83f600; /* Dark background for active state */
+  }
+  .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .btns ul li img {
+    width: 20px;
+    /* padding-right: 0; */
+  }
+}
