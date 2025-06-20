@@ -10,6 +10,7 @@ import Scroll from "../pages/Scroll/Scroll";
 import StartSurvey from "../pages/startSurvey/startSurvey";
 import Exam from "../pages/Exam/Exam";
 import Exam2 from "../pages/Exam2/Exam2";
+import ProfileEdit from "../pages/profile/ProfileEdit/ProfileEdit.jsx";
 
 export const routers = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const routers = createBrowserRouter([
   {
     path: "/exam2",
     element: <Exam2 />,
+  },
+  {
+    path: "/profile/edit" ,
+    element: <ProfileEdit />,
   },
   {
     path: "/*",

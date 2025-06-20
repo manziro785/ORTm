@@ -1,0 +1,252 @@
+/* Основной стиль редактирования профиля */
+.edit-profile-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: Montserrat, sans-serif;
+    flex-direction: column;
+}
+
+.edit-profile-content {
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* Навигация */
+.nav-menu li {
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.nav-menu .icon {
+    margin-right: 10px;
+}
+
+.nav-menu .active {
+    background-color: #007BFF;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Блок загрузки фото */
+.profile-picture-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    background-color: #242424;
+    padding: 20px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #007BFF;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-picture-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.profile-picture-section p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.upload-button {
+    background-color: transparent;
+    border: 1px solid #007BFF;
+    color: #007BFF;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: fit-content;
+}
+
+.description {
+    border: 1px solid #007BFF;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* Форма редактирования */
+.user-info-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.user-info-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #333;
+    border-radius: 8px ;
+    left: 500px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+
+
+
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    color: #333;
+    font-size: 16px;
+}
+
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.interest-tag {
+    background-color: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.interest-tag span {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #FF0000;
+}
+
+.add-interest {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.add-interest input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    color: #333;
+    font-size: 16px;
+}
+
+.add-interest button {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-button {
+    width: 98%;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    padding: 15px;
+    border: none;
+    align-items: center;
+    justify-self: center;
+    right: 15px !important;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .profile-picture-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-info {
+        align-items: center;
+    }
+
+    .description {
+        text-align: center;
+    }
+
+    .add-interest {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .user-info-form h2,
+    .profile-picture-section h2 {
+        font-size: 18px;
+    }
+
+    .form-group input,
+    .add-interest input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .add-interest button,
+    .save-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

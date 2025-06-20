@@ -1,0 +1,103 @@
+.profileContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.profileHeader {
+    margin-bottom: 40px;
+}
+
+.profileHeader h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.profileBio {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #495057;
+    border-left: 4px solid #3498db;
+}
+
+.statsSection h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.statCard {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.statLabel {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.statValue {
+    font-size: 38px;
+    font-weight: 800;
+    color: #3498db;
+}
+
+.statHighlight {
+    font-size: 32px;
+    font-weight: 800;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ratioContainer {
+    margin-top: 10px;
+}
+
+.ratioValue {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.ratioBar {
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.ratioFill {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    width: 89%;
+    border-radius: 5px;
+}
