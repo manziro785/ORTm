@@ -1,0 +1,13 @@
+/* MainLayout.module.css */
+.layoutContainer {
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* ❗️ запрещаем прокрутку для контейнера */
+}
+
+.pageContent {
+  flex-grow: 1;
+  overflow-y: auto; /* ✅ прокрутка только здесь */
+  overflow-x: hidden;
+  height: 100vh;
+}

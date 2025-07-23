@@ -19,10 +19,10 @@ export default function LoginPage() {
 
   const validate = () => {
     const errs = {};
-    if (!form.email.trim()) errs.email = "Please enter your email.";
+    if (!form.email.trim()) errs.email = "Пожалуйста, введите почту.";
     else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email))
-      errs.email = "Invalid email format.";
-    if (!form.password) errs.password = "Please enter your password.";
+      errs.email = "Некорректный формат почты.";
+    if (!form.password) errs.password = "Пожалуйста, введите пароль.";
     return errs;
   };
 
@@ -37,7 +37,7 @@ export default function LoginPage() {
     const errs = validate();
     setErrors(errs);
     if (Object.keys(errs).length) {
-      alert("Please fill in all fields correctly.");
+      alert("Пожалуйста, заполните все поля корректно.");
       return;
     }
     setLoading(true);
@@ -54,13 +54,15 @@ export default function LoginPage() {
         navigate("/dashboard");
       } else {
         setServerError(
-          data.message || "Invalid credentials. Please try again."
+          data.message || "Неверные данные. Пожалуйста, попробуйте еще раз."
         );
-        alert(data.message || "Invalid credentials. Please try again.");
+        alert(
+          data.message || "Неверные данные. Пожалуйста, попробуйте еще раз."
+        );
       }
     } catch {
-      setServerError("Network error. Please try again.");
-      alert("Network error. Please try again.");
+      setServerError("Ошибка сети. Пожалуйста, попробуйте еще раз.");
+      alert("Ошибка сети. Пожалуйста, попробуйте еще раз.");
     } finally {
       setLoading(false);
     }
@@ -68,27 +70,27 @@ export default function LoginPage() {
 
   return (
     <AuthLayout
-      title="Кирүү"
+      title="Вход"
       backLink="/"
       nextLink="/dashboard"
-      relink="Аккаунт түзүү"
+      relink="Создать аккаунт"
       relinkLink="/register"
       onNext={handleSubmit}
     >
       <h4> </h4>
-      <h5>Аккаунтуңузга кириңиз</h5>
-      <p>Системага кирүү үчүн почтаңызды жана купуя сөзүңүздү жазыңыз.</p>
+      <h5>Войдите в свой аккаунт</h5>
+      <p>Для входа в систему введите вашу почту и пароль.</p>
       <form className="form_register" onSubmit={handleSubmit}>
         <div className="form_register_up">
           <div className="form_register_row">
             <div>
               <label>
-                Электрондук почта <span>*</span>
+                Электронная почта <span>*</span>
               </label>
               <input
                 type="email"
                 name="email"
-                placeholder="Почтаңызды жазыңыз"
+                placeholder="Введите почту"
                 value={form.email}
                 onChange={handleChange}
                 disabled={loading}
@@ -97,13 +99,13 @@ export default function LoginPage() {
             </div>
             <div>
               <label>
-                Купуя сөз (пароль)
+                Пароль
                 <span> *</span>
               </label>
               <input
                 type="password"
                 name="password"
-                placeholder="Купуя сөздү жазыңыз"
+                placeholder="Введите пароль"
                 value={form.password}
                 onChange={handleChange}
                 disabled={loading}

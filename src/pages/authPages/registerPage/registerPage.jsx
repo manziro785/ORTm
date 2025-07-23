@@ -8,11 +8,11 @@ const SUBJECTS = [
   { value: "CHEMISTRY", label: "Химия" },
   { value: "PHYSICS", label: "Физика" },
   { value: "BIOLOGY", label: "Биология" },
-  { value: "KYRGYZ", label: "Кыргыз тили" },
-  { value: "HISTORY", label: "Тарых" },
+  { value: "KYRGYZ", label: "Кыргызский язык" },
+  { value: "HISTORY", label: "История" },
   { value: "ANALOGY", label: "Аналогия" },
-  { value: "READING", label: "Окуу (Чтение)" },
-  { value: "PRACTICERUSHIAN", label: "Орус тили (Практика)" },
+  { value: "READING", label: "Чтение" },
+  { value: "PRACTICERUSHIAN", label: "Русский язык (Практика)" },
 ];
 
 export default function RegisterPage() {
@@ -37,15 +37,16 @@ export default function RegisterPage() {
 
   const validate = () => {
     const errs = {};
-    if (!form.name.trim()) errs.name = "Атыңызды жазыңыз";
-    if (!form.surname.trim()) errs.surname = "Фамилияңызды жазыңыз";
-    if (!form.email.trim()) errs.email = "Почтаңызды жазыңыз";
+    if (!form.name.trim()) errs.name = "Пожалуйста, введите имя";
+    if (!form.surname.trim()) errs.surname = "Пожалуйста, введите фамилию";
+    if (!form.email.trim()) errs.email = "Пожалуйста, введите почту";
     else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email))
-      errs.email = "Почта туура эмес";
-    if (!form.password) errs.password = "Купуя сөз жазыңыз";
+      errs.email = "Некорректная почта";
+    if (!form.password) errs.password = "Пожалуйста, введите пароль";
     else if (form.password.length < 6)
-      errs.password = "Купуя сөз кеминде 6 символ болушу керек";
-    if (!form.interest.length) errs.interest = "Кызыkкан предметти тандаңыз";
+      errs.password = "Пароль должен содержать минимум 6 символов";
+    if (!form.interest.length)
+      errs.interest = "Пожалуйста, выберите интересующий предмет";
     return errs;
   };
 
@@ -65,7 +66,7 @@ export default function RegisterPage() {
     const errs = validate();
     setErrors(errs);
     if (Object.keys(errs).length) {
-      alert("Please fill in all fields correctly.");
+      alert("Пожалуйста, заполните все поля корректно.");
       return;
     }
     setLoading(true);
@@ -80,12 +81,16 @@ export default function RegisterPage() {
         localStorage.setItem("email_verification_required", "1");
         navigate("/email_resend");
       } else {
-        setServerError(data.message || "An error occurred. Please try again.");
-        alert(data.message || "An error occurred. Please try again.");
+        setServerError(
+          data.message || "Произошла ошибка. Пожалуйста, попробуйте еще раз."
+        );
+        alert(
+          data.message || "Произошла ошибка. Пожалуйста, попробуйте еще раз."
+        );
       }
     } catch {
-      setServerError("Network error. Please try again.");
-      alert("Network error. Please try again.");
+      setServerError("Ошибка сети. Пожалуйста, попробуйте еще раз.");
+      alert("Ошибка сети. Пожалуйста, попробуйте еще раз.");
     } finally {
       setLoading(false);
     }
@@ -93,27 +98,27 @@ export default function RegisterPage() {
 
   return (
     <AuthLayout
-      title="Катталуу"
+      title="Регистрация"
       backLink="/"
       nextLink="/email_resend"
-      relink="Эсептик жазууңуз барбы?"
+      relink="Уже есть аккаунт?"
       relinkLink="/login"
       onNext={handleSubmit}
     >
-      <h4>1-кадам</h4>
-      <h5>Катталуу үчүн маалыматтарды толтуруңуз</h5>
-      <p> Заполните следующие поля, чтобы получить доступ к платформе</p>
+      <h4>Шаг 1</h4>
+      <h5>Заполните данные для регистрации</h5>
+      <p>Заполните следующие поля, чтобы получить доступ к платформе</p>
       <form className="form_register" onSubmit={handleSubmit}>
         <div className="form_register_up">
           <div className="form_register_row">
             <div>
               <label>
-                Аты <span>*</span>
+                Имя <span>*</span>
               </label>
               <input
                 type="text"
                 name="name"
-                placeholder="Атыңызды жазыңыз"
+                placeholder="Введите имя"
                 value={form.name}
                 onChange={handleChange}
                 disabled={loading}
@@ -122,12 +127,12 @@ export default function RegisterPage() {
             </div>
             <div>
               <label>
-                Фамилиясы <span>*</span>
+                Фамилия <span>*</span>
               </label>
               <input
                 type="text"
                 name="surname"
-                placeholder="Фамилияңызды жазыңыз"
+                placeholder="Введите фамилию"
                 value={form.surname}
                 onChange={handleChange}
                 disabled={loading}
@@ -140,13 +145,13 @@ export default function RegisterPage() {
           <div className="form_register_row">
             <div>
               <label>
-                Электрондук почта
+                Электронная почта
                 <span> *</span>
               </label>
               <input
                 type="email"
                 name="email"
-                placeholder="Почтаңызды жазыңыз"
+                placeholder="Введите почту"
                 value={form.email}
                 onChange={handleChange}
                 disabled={loading}
@@ -155,13 +160,13 @@ export default function RegisterPage() {
             </div>
             <div>
               <label>
-                Купуя сөз (пароль)
+                Пароль
                 <span> *</span>
               </label>
               <input
                 type="password"
                 name="password"
-                placeholder="Купуя сөз ойлоп табыңыз"
+                placeholder="Придумайте пароль"
                 value={form.password}
                 onChange={handleChange}
                 disabled={loading}
@@ -174,7 +179,7 @@ export default function RegisterPage() {
         </div>
         <div>
           <label style={{ margin: "0.5rem 0" }}>
-            Сизге кызыkкан ОРТ предметтери
+            Выберите интересующие предметы ОРТ
           </label>
           <select
             name="interest"
@@ -182,7 +187,7 @@ export default function RegisterPage() {
             onChange={handleSelect}
             disabled={loading}
           >
-            <option value="">Кызыkкан предметтерди тандаңыз</option>
+            <option value="">Выберите предмет</option>
             {SUBJECTS.map((s) => (
               <option key={s.value} value={s.value}>
                 {s.label}

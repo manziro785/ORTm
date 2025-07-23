@@ -7,7 +7,7 @@ export default function Search({ value, onChange }) {
     <div className={style.search_container}>
       <input
         type="text"
-        placeholder="Сизди кызыктырган тапшырмалар жыйнактарын издеңиз"
+        placeholder="Найдите интересующие вас коллекции задач."
         value={value}
         onChange={onChange}
       />

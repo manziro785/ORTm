@@ -9,37 +9,37 @@ export default function HowItWorks() {
     <div>
       <div className={style.how_it_works_wrapper}>
         <div className={style.how_it_works_content}>
-          <h4>Бул кантип иштейт?</h4>
+          <h4>Как это работает?</h4>
           <div className={style.cards}>
             <div className={style.card} style={{ backgroundColor: "#001C65" }}>
               <img src={icon_11} alt="" />
-              <h5>Тапшырмаларды чыгар</h5>
+              <h5>Решай задачи</h5>
               <p>
-                Лента жаңы тапшырмалар менен <br /> жаңыланып турат.
+                Лента пополняется новыми <br /> задачами.
               </p>
             </div>
             <div className={style.card} style={{ backgroundColor: "#022684" }}>
               <img src={icon_12} alt="" />
-              <h5>Секцияларды танда</h5>
+              <h5>Выбери секции</h5>
               <p>
-                Аналогиябы? Математикабы? <br />
-                Фильтрлеп өзүңө ыңгайлуу кыл.{" "}
+                Аналогия? Математика? <br />
+                Фильтруй и выбирай.{" "}
               </p>
             </div>
             <div className={style.card} style={{ backgroundColor: "#013AC9" }}>
               <img src={icon_13} alt="" />
-              <h5>Жоопторду түшүн</h5>
+              <h5>Понимай задания</h5>
               <p>
-                “Чечимди көрүү” баскычы менен <br />
-                ChatGPT түшүндүрмө берет.{" "}
+                “Посмотри решение” <br />
+                ChatGPT объясняет.{" "}
               </p>
             </div>
             <div className={style.card} style={{ backgroundColor: "#1653EB" }}>
               <img src={icon_14} alt="" />
-              <h5>Прогрессти сакта</h5>
+              <h5>Сохраняй прогресс </h5>
               <p>
-                Профилиңде чогулткан жыйнактар,
-                <br /> статистика, сүйүктүүлөр сакталат.{" "}
+                В профиле сохраняются <br />
+                статистики, избранные задачи.{" "}
               </p>
             </div>
           </div>

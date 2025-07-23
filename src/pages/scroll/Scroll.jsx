@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import style from "./Scroll.module.css";
-import Sidebar from "../../components/common/sideBar/sideBar";
 // import pencil from "../../assets/scrollFeed/img_back.svg";
-import img_example from "../../assets/scrollFeed/img_example.svg";
+// import img_example from "../../assets/scrollFeed/img_example.svg";
 import pencil from "../../assets/scrollFeed/icon_right.svg";
 
 const LETTERS = ["A", "Б", "В", "Г", "Д", "Е", "Ж", "З"];
@@ -220,7 +219,6 @@ export default function Scroll() {
   // --- UI ---
   return (
     <>
-      <Sidebar />
       <div className={style.scroll_container}>
         <button
           className={style.open_canvas_btn}

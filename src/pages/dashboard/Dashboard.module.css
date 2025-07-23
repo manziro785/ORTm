@@ -1,8 +1,11 @@
 .dashboard_content {
   /* width: 100%; */
-  height: 100vh;
-  margin-left: 22rem;
-  padding: 5rem 2rem 1rem 2rem;
+  /* height: 100vh; */
+  margin-left: 20rem !important;
+  padding: 5rem 4rem 1rem 2rem !important;
+  /* scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: scroll; */
 }
 
 .dashboard_content_wrapper {
@@ -49,7 +52,6 @@
 .dashboard_content_wrapper_images img:hover {
   transform: scale(1.02);
 }
-
 
 .dashboard_content {
   /* width: 100%; */
@@ -101,4 +103,23 @@
 
 .dashboard_content_wrapper_images img:hover {
   transform: scale(1.02);
+}
+
+.layoutContainer {
+  display: flex;
+  min-height: 100vh;
+}
+.pageContent {
+  flex: 1;
+  padding: 2rem;
+  background: #f7f7f7;
+  /* Возможно, здесь не нужно overflow или height */
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* только один скролл */
 }

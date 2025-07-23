@@ -8,29 +8,29 @@ export default function Grades() {
         <div className={style.card}>
           <p>2 000+</p>
           <div>
-            ОРТ <br />
-            тапшырмалары
+            Задач <br />
+            по ОРТ
           </div>
         </div>
         <div className={style.card}>
           <p>10 000+</p>
           <div>
-            Активдүү <br />
-            колдонуучу
+            Активных <br />
+            Пользователей
           </div>
         </div>
         <div className={style.card}>
           <p>30+</p>
           <div>
-            Тематикалык <br />
-            жыйнактар
+            Тематические <br />
+            коллекции
           </div>
         </div>
         <div className={style.card}>
           <p>100%</p>
           <div>
-            Акысыз жана
-            <br /> жеткиликтүү
+            Бесплатно и
+            <br /> доступно
           </div>
         </div>
       </div>

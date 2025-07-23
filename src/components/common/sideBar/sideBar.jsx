@@ -40,7 +40,7 @@ const Sidebar = () => {
                 handleNavigation("/dashboard");
               }}
             >
-              <img src={img1} alt="" /> <span>Башкы бет</span>
+              <img src={img1} alt="" /> <span>Главная</span>
             </NavLink>
           </li>
           <li>
@@ -57,6 +57,18 @@ const Sidebar = () => {
           </li>
           <li>
             <NavLink
+              to="/friends"
+              className={({ isActive }) => (isActive ? style.active : "")}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation("/friends");
+              }}
+            >
+              <img src={img3} alt="" /> <span>Друзья</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/profile"
               className={({ isActive }) => (isActive ? style.active : "")}
               onClick={(e) => {
@@ -64,7 +76,7 @@ const Sidebar = () => {
                 handleNavigation("/profile");
               }}
             >
-              <img src={img4} alt="" /> <span>Жеке баракча</span>
+              <img src={img4} alt="" /> <span>Профиль</span>
             </NavLink>
           </li>
         </ul>

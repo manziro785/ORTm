@@ -11,6 +11,7 @@ body {
 #root {
   position: relative;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 :root {
@@ -35,4 +36,23 @@ body {
     url("./fonts/CompactaBlack.otf") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+
+/* Кастомный скроллбар для Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px; /* ширина полосы прокрутки */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* фон трека (задний фон) */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555; /* сам бегунок */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }

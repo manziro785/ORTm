@@ -23,18 +23,18 @@ export default function AuthLayout({
           </div>
           <div className={style.btns}>
             <NavLink to={backLink} className={style.btn_back}>
-              Артка кайтуу
+              Назад
             </NavLink>
             <div className={style.relink}>
               <NavLink to={relinkLink}>{relink}</NavLink>
             </div>
             {onNext ? (
               <button className={style.btn_back} onClick={onNext} type="button">
-                Улантуу
+                Продолжить
               </button>
             ) : (
               <NavLink to={nextLink} className={style.btn_back}>
-                Улантуу
+                Продолжить
               </NavLink>
             )}
           </div>

@@ -53,15 +53,15 @@ export default function Banner() {
           <h2>Прокрастинацияны</h2>
           <h3>даярдыкка айландыр!</h3>
           <p>
-            ОРТка даярдануу үчүн заманбап платформа, окуу күнүмдүк адатка
-            айланат.
+            Современная платформа для подготовки к ОРТ, где учеба становится
+            ежедневной привычкой.
           </p>
           <div className={style.btns}>
             <NavLink to="/register" className={style.btn_reg}>
-              Катталуу
+              Регистрация
             </NavLink>
             <NavLink to="/login" className={style.btn_login}>
-              Кирүү
+              Вход
             </NavLink>
           </div>
         </div>

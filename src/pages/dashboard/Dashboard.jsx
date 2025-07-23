@@ -1,5 +1,4 @@
 import style from "./Dashboard.module.css";
-import Sidebar from "../../components/common/sideBar/sideBar";
 import Search from "../../components/dashboard/search/Search";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -10,46 +9,46 @@ import img__3 from "../../assets/scrollFeed/img__1 (1).svg";
 
 const cardData = [
   {
-    title: "Толук тест",
-    subtitle: "Бардык бөлүмдөр",
-    time: "215 мүнөт",
+    title: "Полный тест",
+    subtitle: "Все разделы",
+    time: "215 минут",
     count: 150,
     color: "#5b8efc",
     textColor: "#fff",
   },
   {
     title: "Математика",
-    subtitle: "1-бөлүк",
-    time: "30 мүнөт",
+    subtitle: "Раздел 1",
+    time: "30 минут",
     count: 30,
     color: "#d6ff4b",
     textColor: "#111",
   },
   {
     title: "Математика",
-    subtitle: "2-бөлүк",
-    time: "60 мүнөт",
+    subtitle: "Раздел 2",
+    time: "60 минут",
     count: 30,
     color: "#8fffc1",
     textColor: "#111",
   },
   {
-    title: "Окошоттуктар жана сүйлөмдөрдү толуктоо",
-    time: "30 мүнөт",
+    title: "Дополнение предложений и аналогии",
+    time: "30 минут",
     count: 30,
     color: "#ffe066",
     textColor: "#111",
   },
   {
-    title: "Текстти окуу жана түшүнүү",
-    time: "60 мүнөт",
+    title: "Чтение и понимание текста",
+    time: "60 минут",
     count: 30,
     color: "#ffb98a",
     textColor: "#111",
   },
   {
-    title: "Кыргыз тилинин грамматикасы",
-    time: "35 мүнөт",
+    title: "Грамматика кыргызского языка",
+    time: "35 минут",
     count: 30,
     color: "#3b6fff",
     textColor: "#fff",
@@ -59,46 +58,46 @@ const cardData = [
 const cardData2 = [
   {
     title: "Блиц Математика",
-    subtitle: "Бардык бөлүмдөр",
-    time: "10 мүнөт",
+    subtitle: "Все разделы",
+    time: "10 минут",
     count: 10,
     color: "#2563eb",
     textColor: "#fff",
   },
   {
-    title: "Блиц Орус тили",
-    subtitle: "Бардык бөлүмдөр",
-    time: "10 мүнөт",
+    title: "Блиц Русский язык",
+    subtitle: "Все разделы",
+    time: "10 минут",
     count: 10,
     color: "#ffe066",
     textColor: "#111",
   },
   {
-    title: "Математика: Толук кайталоо",
-    subtitle: "Бардык бөлүмдөр",
-    time: "30 мүнөт",
+    title: "Математика: Полный повтор",
+    subtitle: "Все разделы",
+    time: "30 минут",
     count: 25,
     color: "#ffb98a",
     textColor: "#111",
   },
   {
-    title: "Орус тил: Толук кайталоо",
-    subtitle: "Бардык бөлүмдөр",
-    time: "30 мүнөт",
+    title: "Русский язык: Полный повтор",
+    subtitle: "Все разделы",
+    time: "30 минут",
     count: 25,
     color: "#8fffc1",
     textColor: "#111",
   },
   {
-    title: "Текстти окуу жана түшүнүү",
-    time: "60 мүнөт",
+    title: "Чтение и понимание текста",
+    time: "60 минут",
     count: 30,
     color: "#2563eb",
     textColor: "#fff",
   },
   {
-    title: "Кыргыз тилинин грамматикасы",
-    time: "35 мүнөт",
+    title: "Грамматика кыргызского языка",
+    time: "35 минут",
     count: 30,
     color: "#2563eb",
     textColor: "#fff",
@@ -123,12 +122,10 @@ export default function Dashboard() {
   return (
     <>
       <div className={style.dashboard_container}>
-        {" "}
-        <Sidebar />
         <div className={style.dashboard_content}>
           <Search value={search} onChange={(e) => setSearch(e.target.value)} />
           <div className={style.dashboard_content_wrapper}>
-            <h4>Классикалык жыйнактар</h4>
+            <h4>Классические сборники</h4>
             <div
               style={{
                 display: "flex",
@@ -181,17 +178,17 @@ export default function Dashboard() {
                       opacity: 0.85,
                     }}
                   >
-                    Убактысы: {card.time}
+                    Время: {card.time}
                   </div>
                   <div style={{ fontSize: "1em", opacity: 0.85 }}>
-                    Тапшырмалардын саны: {card.count}
+                    Количество заданий: {card.count}
                   </div>
                 </div>
               ))}
             </div>
           </div>
           <div className={style.dashboard_content_wrapper_images}>
-            <h4>Тапшырма клиптери</h4>
+            <h4>Клипы по заданиям</h4>
 
             <div>
               <img
@@ -227,7 +224,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className={style.dashboard_content_wrapper}>
-            <h4>Өзгөчө жыйнактар</h4>
+            <h4>Особые сборники</h4>
             <div
               style={{
                 display: "flex",
@@ -280,10 +277,10 @@ export default function Dashboard() {
                       opacity: 0.85,
                     }}
                   >
-                    Убактысы: {card.time}
+                    Время: {card.time}
                   </div>
                   <div style={{ fontSize: "1em", opacity: 0.85 }}>
-                    Тапшырмалардын саны: {card.count}
+                    Количество заданий: {card.count}
                   </div>
                 </div>
               ))}
