@@ -66,7 +66,7 @@ export default function RegisterPage() {
     const errs = validate();
     setErrors(errs);
     if (Object.keys(errs).length) {
-      alert("Пожалуйста, заполните все поля корректно.");
+      setServerError("Пожалуйста, заполните все поля корректно.");
       return;
     }
     setLoading(true);
@@ -77,20 +77,18 @@ export default function RegisterPage() {
         body: JSON.stringify(form),
       });
       const data = await res.json();
-      if (res.ok) {
-        localStorage.setItem("email_verification_required", "1");
-        navigate("/email_resend");
+      console.log("Ответ сервера:", data);
+
+      if (res.ok && data.message) {
+        localStorage.setItem("token", data.message);
+        // задержка необязательна, но можно оставить на всякий случай
+        navigate("/dashboard");
       } else {
-        setServerError(
-          data.message || "Произошла ошибка. Пожалуйста, попробуйте еще раз."
-        );
-        alert(
-          data.message || "Произошла ошибка. Пожалуйста, попробуйте еще раз."
-        );
+        setServerError(data.message || "Ошибка регистрации.");
       }
-    } catch {
-      setServerError("Ошибка сети. Пожалуйста, попробуйте еще раз.");
-      alert("Ошибка сети. Пожалуйста, попробуйте еще раз.");
+    } catch (error) {
+      console.error("Ошибка при регистрации:", error);
+      setServerError("Сервер временно недоступен. Попробуйте позже.");
     } finally {
       setLoading(false);
     }

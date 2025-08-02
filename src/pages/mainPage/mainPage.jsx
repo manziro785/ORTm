@@ -6,6 +6,7 @@ import Banner from "../../components/mainPage/banner/banner";
 import Cards from "../../components/mainPage/cards/cards";
 import Grades from "../../components/mainPage/grades/Grades";
 import HowItWorks from "../../components/mainPage/howItWorks/HowItWorks";
+import Subbuner from "../../components/mainPage/subbuner/subbuner.component";
 
 export default function MainPage() {
   return (
@@ -15,6 +16,7 @@ export default function MainPage() {
         <Banner />
         <Grades />
         <HowItWorks />
+        <Subbuner />
         <AboutUs />
         <Cards />
       </div>

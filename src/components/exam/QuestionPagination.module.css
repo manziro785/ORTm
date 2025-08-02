@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  /* margin-top: 1rem; */
+  padding-top: 2rem;
+  user-select: none;
+}
+
+.circles,
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 1rem;
+}
+
+.numbers {
+  gap: 1.2rem;
+}
+
+.circle {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #60a5fa;
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+.activeCircle {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.number {
+  font-size: 0.75rem;
+  color: #d1d5db;
+  font-weight: normal;
+  width: 1rem;
+  text-align: center;
+  flex-shrink: 0;
+  visibility: hidden; /* по умолчанию скрыты */
+}
+
+.activeNumber {
+  color: #ffffff;
+  font-weight: 700;
+  visibility: visible; /* видим только активный */
+}

@@ -9,6 +9,11 @@ export default function Profile() {
     navigate("/profile/edit");
   };
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
   return (
     <div className={style.profileContainer}>
       <div className={style.profileContent}>
@@ -18,6 +23,8 @@ export default function Profile() {
             alt="avatar"
             className={style.avatar}
           />
+          <button onClick={logout}>Выйти</button>
+
           <h2 className={style.name}>Рик Граймс Краш</h2>
           <p className={style.university}>
             American University of Central Asia

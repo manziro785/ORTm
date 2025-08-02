@@ -1,7 +1,7 @@
 .search_container {
   display: flex;
   gap: 1rem; /* 2rem слишком много, можно уменьшить */
-  width: 70%;
+  width: 100%;
   align-items: center;
 }
 

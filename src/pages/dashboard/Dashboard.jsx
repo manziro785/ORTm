@@ -119,175 +119,55 @@ export default function Dashboard() {
       .includes(search.toLowerCase())
   );
 
-  return (
-    <>
-      <div className={style.dashboard_container}>
-        <div className={style.dashboard_content}>
-          <Search value={search} onChange={(e) => setSearch(e.target.value)} />
-          <div className={style.dashboard_content_wrapper}>
-            <h4>Классические сборники</h4>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "2rem",
-                // marginTop: "1.5rem",
-              }}
-            >
-              {filteredCards.map((card, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => navigate("/start_survey")}
-                  style={{
-                    background: card.color,
-                    borderRadius: "16px",
-                    padding: "2rem 1.5rem",
-                    minWidth: "270px",
-                    maxWidth: "320px",
-                    flex: "1 1 270px",
-                    color: card.textColor,
-                    boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
-                    cursor: "pointer",
-                  }}
-                  className={style.dashboard_content_wrapper_card}
-                >
-                  {card.subtitle && (
-                    <div
-                      style={{
-                        fontWeight: 500,
-                        fontSize: "1.1em",
-                        opacity: 0.8,
-                      }}
-                    >
-                      {card.subtitle}
-                    </div>
-                  )}
-                  <div
-                    style={{
-                      fontWeight: 700,
-                      fontSize: "1.35em",
-                      margin: "0.5em 0",
-                    }}
-                  >
-                    {card.title}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "1em",
-                      marginTop: "1.2em",
-                      opacity: 0.85,
-                    }}
-                  >
-                    Время: {card.time}
-                  </div>
-                  <div style={{ fontSize: "1em", opacity: 0.85 }}>
-                    Количество заданий: {card.count}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className={style.dashboard_content_wrapper_images}>
-            <h4>Клипы по заданиям</h4>
+  const renderCard = (card, idx) => (
+    <div
+      key={idx}
+      onClick={() => navigate("/start_survey")}
+      className={style.card}
+      style={{
+        background: card.color,
+        color: card.textColor,
+      }}
+    >
+      {card.subtitle && (
+        <div className={style.cardSubtitle}>{card.subtitle}</div>
+      )}
+      <div className={style.cardTitle}>{card.title}</div>
+      <div className={style.cardInfo}>Время: {card.time}</div>
+      <div className={style.cardInfo}>Количество заданий: {card.count}</div>
+    </div>
+  );
 
-            <div>
+  return (
+    <div className={style.dashboard_container}>
+      <div className={style.dashboard_content}>
+        <Search value={search} onChange={(e) => setSearch(e.target.value)} />
+
+        <div className={style.dashboard_content_wrapper}>
+          <h4>Классические сборники</h4>
+          <div className={style.cardGrid}>{filteredCards.map(renderCard)}</div>
+        </div>
+
+        <div className={style.dashboard_content_wrapper_images}>
+          <h4>Клипы по заданиям</h4>
+          <div className={style.imageRow}>
+            {[img__1, img__2, img__3, img__1, img__2].map((img, idx) => (
               <img
-                src={img__1}
+                key={idx}
+                src={img}
                 alt=""
                 onClick={() => navigate("/scroll")}
-                style={{ cursor: "pointer" }}
+                className={style.image}
               />
-              <img
-                src={img__2}
-                alt=""
-                onClick={() => navigate("/scroll")}
-                style={{ cursor: "pointer" }}
-              />
-              <img
-                src={img__3}
-                alt=""
-                onClick={() => navigate("/scroll")}
-                style={{ cursor: "pointer" }}
-              />
-              <img
-                src={img__1}
-                alt=""
-                onClick={() => navigate("/scroll")}
-                style={{ cursor: "pointer" }}
-              />
-              <img
-                src={img__2}
-                alt=""
-                onClick={() => navigate("/scroll")}
-                style={{ cursor: "pointer" }}
-              />
-            </div>
-          </div>
-          <div className={style.dashboard_content_wrapper}>
-            <h4>Особые сборники</h4>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "2rem",
-                // marginTop: "1.5rem",
-              }}
-            >
-              {filteredCards2.map((card, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => navigate("/start_survey")}
-                  style={{
-                    background: card.color,
-                    borderRadius: "16px",
-                    padding: "2rem 1.5rem",
-                    minWidth: "270px",
-                    maxWidth: "320px",
-                    flex: "1 1 270px",
-                    color: card.textColor,
-                    boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
-                    cursor: "pointer",
-                  }}
-                  className={style.dashboard_content_wrapper_card}
-                >
-                  {card.subtitle && (
-                    <div
-                      style={{
-                        fontWeight: 500,
-                        fontSize: "1.1em",
-                        opacity: 0.8,
-                      }}
-                    >
-                      {card.subtitle}
-                    </div>
-                  )}
-                  <div
-                    style={{
-                      fontWeight: 700,
-                      fontSize: "1.35em",
-                      margin: "0.5em 0",
-                    }}
-                  >
-                    {card.title}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "1em",
-                      marginTop: "1.2em",
-                      opacity: 0.85,
-                    }}
-                  >
-                    Время: {card.time}
-                  </div>
-                  <div style={{ fontSize: "1em", opacity: 0.85 }}>
-                    Количество заданий: {card.count}
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
+
+        <div className={style.dashboard_content_wrapper}>
+          <h4>Особые сборники</h4>
+          <div className={style.cardGrid}>{filteredCards2.map(renderCard)}</div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

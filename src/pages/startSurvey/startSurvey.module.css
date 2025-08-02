@@ -1,21 +1,47 @@
-.dashboard_content > img {
-  width: 100%;
+.start_survey_content {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.btns {
+.btn_back {
+  margin-bottom: 2rem;
+}
+
+.start_survey_content h3 {
+  font-size: 2rem;
+  margin-bottom: 0rem;
+}
+
+.start_survey_content_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.start_survey_content_wrapper div {
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.span_start_survey {
+  margin-top: 0.7rem;
+}
+
+.start_survey_content_wrapper p {
+  font-size: 1rem;
+}
+
+.down_side {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 10rem;
+  margin-top: 3rem;
 }
 
-.btns p {
-  color: #ffff;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.btn_start {
+.btn_start_survey_link {
   background-color: #000;
   color: #fff;
   background-color: #3b82f6;
@@ -24,4 +50,11 @@
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn_start_survey_link:hover {
+  background-color: #3b83f6ad;
+  color: #fff;
 }

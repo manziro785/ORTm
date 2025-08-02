@@ -1,8 +1,14 @@
+.dashboard_container {
+  display: flex;
+  justify-content: center;
+}
+
 .dashboard_content {
   /* width: 100%; */
   /* height: 100vh; */
   margin-left: 20rem !important;
   padding: 5rem 4rem 1rem 2rem !important;
+  max-width: 1400px;
   /* scrollbar-width: none;
   -ms-overflow-style: none;
   overflow-y: scroll; */
@@ -122,4 +128,91 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: auto; /* только один скролл */
+}
+
+.dashboard_container {
+  width: 100%;
+}
+
+.dashboard_content {
+  height: 100vh;
+  margin-left: 22rem;
+  padding: 5rem 2rem 1rem 2rem;
+}
+
+.dashboard_content_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard_content_wrapper h4,
+.dashboard_content_wrapper_images h4 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+}
+
+.dashboard_content_wrapper_images {
+  margin-top: 4rem;
+}
+
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start; /* <-- вместо space-between */
+  gap: 2rem;
+}
+
+.card {
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  min-width: 270px;
+  max-width: 320px;
+  flex: 1 1 270px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.cardSubtitle {
+  font-weight: 500;
+  font-size: 1.1em;
+  opacity: 0.8;
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 1.35em;
+  margin: 0.5em 0;
+}
+
+.cardInfo {
+  font-size: 1em;
+  opacity: 0.85;
+  margin-top: 1.2em;
+}
+
+.imageRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.image {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 200px;
+}
+
+.image:hover {
+  transform: scale(1.02);
 }

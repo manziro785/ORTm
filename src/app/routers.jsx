@@ -40,11 +40,13 @@ export const routers = createBrowserRouter([
       { path: "profile/edit", element: <ProfileEdit /> },
       { path: "scroll", element: <Scroll /> },
       { path: "start_survey", element: <StartSurvey /> },
-      { path: "exam", element: <Exam /> },
-      { path: "exam2", element: <Exam2 /> },
+
       { path: "friends", element: <FriendsPage /> },
     ],
   },
+
+  { path: "exam/:num", element: <Exam /> },
+  { path: "exam2", element: <Exam2 /> },
   {
     path: "/*",
     element: <NoPage />,

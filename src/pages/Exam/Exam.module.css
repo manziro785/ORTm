@@ -1,0 +1,126 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomBar {
+  /* position: fixed;
+  left: 0;
+  bottom: 0; */
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2.5rem;
+
+  padding: 2.2rem 0;
+  padding-bottom: 3rem;
+  z-index: 100;
+}
+
+.navButton {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.9em 2.5em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.1);
+}
+
+.letterButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.letterButton {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #181c20;
+  color: #fff;
+  border: 3px solid #2563eb;
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.1);
+}
+
+.letterButton.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.topDots {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.dotWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  width: 50px;
+}
+
+.dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #2563eb;
+  background-color: transparent;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dot.active {
+  background-color: #2563eb;
+  color: white;
+}
+
+.dot.answered {
+  background-color: #2563eb;
+  color: #fff;
+  border-color: #64b5f6;
+}
+
+.dotLabel {
+  color: white;
+  font-size: 0.75rem;
+}
