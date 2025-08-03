@@ -216,3 +216,81 @@ body {
 .image:hover {
   transform: scale(1.02);
 }
+
+@media (max-width: 700px) {
+  .dashboard_content {
+    margin-left: 0rem !important;
+    padding-right: 2rem !important;
+  }
+
+  .card {
+    max-width: 220px !important;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard_content {
+    margin-left: 0rem !important;
+    padding-right: 2rem !important;
+  }
+
+  .card {
+    max-width: 500px !important;
+    min-width: 300px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .dashboard_content_wrapper_images {
+    display: none !important;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+    margin: 0 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardSubtitle {
+    font-size: 1rem;
+  }
+
+  .dashboard_content h4 {
+    padding-left: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .dashboard_content {
+    padding-top: 0 !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .dashboard_content_wrapper_images {
+    display: none !important;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+    margin: 0 2rem;
+    min-width: 200px !important;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardSubtitle {
+    font-size: 1rem;
+  }
+
+  .dashboard_content h4 {
+    padding-left: 2rem;
+    font-size: 1.2rem;
+  }
+}

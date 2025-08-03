@@ -166,3 +166,113 @@ h3 {
   z-index: 3;
   filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
 }
+
+@media (max-width: 830px) {
+  .banner_content {
+    position: relative;
+    z-index: 100 !important;
+  }
+  .info::after {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    right: 0rem;
+    width: 120%;
+    height: 300%;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.889); /* Цвет свечения */
+    filter: blur(70px);
+    z-index: -1;
+  }
+
+  .info {
+    margin-left: 3rem;
+  }
+}
+
+@media (max-width: 637px) {
+  .info h2 {
+    font-size: 3.3rem;
+  }
+
+  .info h3 {
+    font-size: 2.9rem;
+  }
+
+  .info p {
+    font-size: 1.2rem;
+    width: 80%;
+  }
+
+  .btns a {
+    padding: 0.7rem 4rem;
+  }
+}
+
+@media (max-width: 539px) {
+  .info h2 {
+    font-size: 2.7rem;
+  }
+
+  .info h3 {
+    font-size: 2.3rem;
+  }
+
+  .info p {
+    font-size: 1rem;
+    width: 75%;
+  }
+
+  .btns a {
+    padding: 0.7rem 3rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 443px) {
+  .info h2 {
+    font-size: 2.4rem;
+  }
+
+  .info h3 {
+    font-size: 2rem;
+  }
+
+  .info p {
+    font-size: 1rem;
+    width: 75%;
+  }
+
+  .btns a {
+    padding: 0.7rem 2.4rem;
+    font-size: 0.8rem;
+  }
+
+  .info {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .info h2 {
+    font-size: 2.1rem;
+  }
+
+  .info h3 {
+    font-size: 1.8rem;
+  }
+
+  .info p {
+    font-size: 0.8rem;
+    width: 85%;
+  }
+
+  .btns a {
+    padding: 0.5rem 2.2rem;
+    font-size: 0.8rem;
+  }
+
+  .info {
+    margin-left: 1rem;
+  }
+}

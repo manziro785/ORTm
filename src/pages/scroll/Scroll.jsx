@@ -22,6 +22,7 @@ export default function Scroll() {
   const canvasRef = useRef(null);
   const drawing = useRef(false);
   const [results, setResults] = useState({}); // { [idx]: true/false }
+  const [message, setMessage] = useState("");
 
   // Загрузка вопросов с бэка
   useEffect(() => {
@@ -127,17 +128,22 @@ export default function Scroll() {
     if (results[idx] !== undefined) return;
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`http://127.0.0.1:8080/task?id=${answerId}`, {
-        method: "POST",
-        headers: {
-          ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/task?id=${answerId}`,
+        {
+          method: "POST",
+          headers: {
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          },
+        }
+      );
       const data = await res.json(); // { correct: true/false }
       setResults((prev) => ({ ...prev, [idx]: data.correct }));
       setAnswers((prev) => ({ ...prev, [idx]: optIdx }));
       if (!data.correct) {
-        alert("Туура эмес!");
+        setMessage("Не правильно!");
+      } else {
+        setMessage("Правильно!");
       }
     } catch {
       alert("Серверден жооп келген жок");
@@ -183,7 +189,7 @@ export default function Scroll() {
         setChatHistory([
           {
             role: "assistant",
-            content: data.answer || data.message || "Жооп жок",
+            content: data.answer || data.message || "Нет ответа",
           },
         ]);
         setChatLoading(false);
@@ -205,7 +211,7 @@ export default function Scroll() {
 
   // Фильтрация вопросов по select
   const filterOptions = [
-    { value: "all", label: "Бардык суроолор" },
+    { value: "all", label: "Все вопросы" },
     ...questions.map((q, idx) => ({
       value: String(q.id),
       label: `Суроо ${idx + 1}`,
@@ -316,6 +322,7 @@ export default function Scroll() {
                     );
                   })}
                 </div>
+                <div>{message}</div>
                 {answers[idx] !== undefined && (
                   <div
                     style={{
@@ -337,14 +344,15 @@ export default function Scroll() {
                       ? answers[idx] === q.correctIndex
                         ? "Туура!"
                         : "Туура эмес"
-                      : "Жооп текшерүү мүмкүн эмес"}
+                      : "Не возможно проверить ответ"}
                   </div>
                 )}
+
                 <button
                   className={style.explain_btn}
                   onClick={() => handleExplain(idx)}
                 >
-                  Жоопту түшүндүрүп берүү
+                  Обьяснить ответ вопроса
                 </button>
               </div>
             ))}
@@ -377,9 +385,9 @@ export default function Scroll() {
             }}
           ></canvas>
           <div className={style.canvas_footer}>
-            <span className={style.canvas_label}>Каралама</span>
+            <span className={style.canvas_label}>Черновик</span>
             <button className={style.clear_btn} onClick={handleClearCanvas}>
-              Баарын тазалоо{" "}
+              Очистить все{"  "}
               <span style={{ fontWeight: 700, fontSize: "1.2em" }}>✖</span>
             </button>
           </div>

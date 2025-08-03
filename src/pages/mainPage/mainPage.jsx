@@ -17,8 +17,8 @@ export default function MainPage() {
         <Grades />
         <HowItWorks />
         <Subbuner />
-        <AboutUs />
-        <Cards />
+        {/* <AboutUs />
+        <Cards /> */}
       </div>
       {/* </Template> */}
     </div>

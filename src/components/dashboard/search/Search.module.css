@@ -36,3 +36,9 @@
   border-radius: 4px;
   flex-shrink: 0; /* чтобы не сжимался */
 }
+
+@media (max-width: 390px) {
+  .search_container {
+    display: none;
+  }
+}
