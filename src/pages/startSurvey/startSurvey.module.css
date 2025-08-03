@@ -58,3 +58,47 @@
   background-color: #3b83f6ad;
   color: #fff;
 }
+
+@media (max-width: 700px) {
+  .start_survey_content_wrapper {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .start_survey_content_wrapper img {
+    margin-top: 2rem;
+  }
+
+  .down_side {
+    margin-bottom: 8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn_start_survey {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .start_survey_content_wrapper {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .start_survey_content_wrapper img {
+    margin-top: 2rem;
+  }
+
+  .down_side {
+    margin-bottom: 8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn_start_survey {
+    margin-top: 1rem;
+  }
+}

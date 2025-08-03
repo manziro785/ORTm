@@ -146,7 +146,7 @@ export default function Scroll() {
         setMessage("Правильно!");
       }
     } catch {
-      alert("Серверден жооп келген жок");
+      alert("С сервера не пришел ответ");
     }
   }
 
@@ -161,9 +161,9 @@ export default function Scroll() {
     const taskId = questions[idx]?.id;
     const token = localStorage.getItem("token");
     const userQuestion =
-      "кайсыл жооп туура жана эмне үчүн экенин так түшүндүрүп бер";
+      "Объясни, какой ответ правильный и почему — точно и понятно.";
     fetch(
-      `http://127.0.0.1:8080/api/chat/ask?userQuestion=${encodeURIComponent(
+      `https://ort-reels.onrender.com/api/chat/ask?userQuestion=${encodeURIComponent(
         userQuestion
       )}&taskId=${taskId}`,
       {
@@ -195,7 +195,7 @@ export default function Scroll() {
         setChatLoading(false);
       })
       .catch((e) => {
-        setChatError("Серверден жооп келген жок: " + e.message);
+        setChatError("С сервера не пришел ответ: " + e.message);
         setChatLoading(false);
       });
   }
@@ -423,9 +423,9 @@ export default function Scroll() {
                 marginBottom: "1em",
               }}
             >
-              Түшүндүрмө
+              Обьяснение
             </div>
-            {chatLoading && <div>Жүктөлүүдө...</div>}
+            {chatLoading && <div>Загрузка...</div>}
             {chatError && <div style={{ color: "#e53935" }}>{chatError}</div>}
             {chatHistory.map((msg, i) => (
               <div

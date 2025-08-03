@@ -121,6 +121,7 @@
   box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);
   transition: background 0.2s;
   margin: 0 auto;
+  margin-top: 1rem;
 }
 .explain_btn:hover {
   background: #1565c0;
@@ -220,4 +221,65 @@
 .close_canvas_btn:hover {
   background: #e53935;
   color: #fff;
+}
+
+@media (max-width: 600px) {
+  .scroll_feed {
+    width: 100% !important;
+  }
+
+  .card_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .variants {
+    margin: 3rem 0;
+  }
+
+  .canvas_footer {
+    margin-bottom: 10rem;
+  }
+
+  .canvas_panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 100vh;
+    background: #181c20;
+    z-index: 30;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem 1rem 1rem;
+    border-radius: 18px 0 0 18px;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 530px) {
+  .canvas_panel {
+    width: 450px;
+  }
+}
+
+@media (max-width: 457px) {
+  .canvas_panel {
+    width: 400px;
+  }
+}
+
+@media (max-width: 420px) {
+  .canvas_panel {
+    width: 360px;
+  }
+}
+
+@media (max-width: 374px) {
+  .canvas_panel {
+    width: 330px;
+  }
 }
