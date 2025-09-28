@@ -1,12 +1,25 @@
-# React + Vite
+# ORTmaster
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**ORTmaster** — веб-платформа для управления учебным процессом.  
+Система позволяет преподавателям и студентам взаимодействовать, отслеживать активность и прогресс, а также работать с учебными материалами.
 
-Currently, two official plugins are available:
+## 🚀 Основные возможности
+- Управление пользователями и ролями (админ, преподаватель, студент).
+- Создание и редактирование учебных активностей.
+- Отслеживание статистики и прогресса.
+- Авторизация и аутентификация.
+- CRUD-операции для заданий и материалов.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Технологии
+**Frontend:** React, TypeScript, Zustand, React Router, Mantine, Axios, React Hook Form  
+**Backend:** Spring Boot (Java), PostgreSQL  
+**Инфраструктура:** Docker
 
-## Expanding the ESLint configuration
+## 📦 Установка и запуск
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+```bash
+git clone https://github.com/manziro785/ORTm.git
+cd ORTm/frontend
+npm install
+npm run dev
