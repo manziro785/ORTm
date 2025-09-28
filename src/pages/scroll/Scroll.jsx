@@ -129,7 +129,7 @@ export default function Scroll() {
     const token = localStorage.getItem("token");
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/task?id=${answerId}`,
+        `${import.meta.env.VITE_API_URL}/task/check/${answerId}`,
         {
           method: "POST",
           headers: {
@@ -344,7 +344,7 @@ export default function Scroll() {
                       ? answers[idx] === q.correctIndex
                         ? "Туура!"
                         : "Туура эмес"
-                      : "Не возможно проверить ответ"}
+                      : ""}
                   </div>
                 )}
 

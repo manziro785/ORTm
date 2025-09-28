@@ -55,7 +55,10 @@ export default function StartSurvey() {
               <p>Количество задач: 150</p>
             </div>
             <div className={style_start.btn_start_survey}>
-              <NavLink to="/exam" className={style_start.btn_start_survey_link}>
+              <NavLink
+                to="/exam/1"
+                className={style_start.btn_start_survey_link}
+              >
                 Начать тест
               </NavLink>
             </div>
