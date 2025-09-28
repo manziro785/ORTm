@@ -1,6 +1,6 @@
 
 <!-- Баннер проекта -->
-![ORTmaster Banner](./src/assets/readme/ort__1.png)
+![ORTmaster Banner](./src/assets/readme/otr__1.png)
 
 # ОРТмастер 📝
 **ОРТмастер** — образовательная платформа для подготовки к экзаменам с тестами, геймификацией и AI-помощником.  
@@ -27,15 +27,14 @@
 ---
 
 ## 📸 Скриншоты
-![Dashboard](./assets/ortmaster-dashboard.png)
-![Quiz](./assets/ortmaster-quiz.png)
+![Dashboard](./src/assets/readme/ort__2.png)
+![Quiz](./src/assets/readme/ort__3.png)
 
 ---
 
 ## ⚡ Быстрый старт
 ```bash
 git clone https://github.com/твой-репозиторий.git
-cd frontend
 npm install
 npm run dev
 
